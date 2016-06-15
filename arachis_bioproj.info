@@ -1,0 +1,10 @@
+name = arachis_bioproj
+description = List recent bioprojects on peanut/Arachis from NCBI via Eutils and JS http requests. Derived from lis_legume_recent_pubs modules at LIS.
+core = 7.x
+files[] = arachis_bioproj.module
+
+package = PeanutBase
+;dependencies[] = 
+;dependencies[] = 
+;files[] = 
+;configure = 

@@ -1,0 +1,48 @@
+<?php
+// $Id$
+
+//  Module: arachis_bioproj
+
+// Sudhansu Dash
+// 2016 March 24
+
+
+/**
+ * Implements hook_menu().
+ */
+
+function arachis_bioproj_menu() {
+  $items = array();
+  $items['arachis_bioproj'] = array( //this creates a URL
+    'title' => 'Recent Peanut Bioprojects', //page title
+    'description' => 'List of recent peanut/Arachis bioprojects from Pubmed via Eutils and JS http request.',
+    'page callback' => arachis_bioproj_page_callback, //this function called when page accessed. For form, use drupal_get_form
+    //'page arguments' => array('grin_acc_query_form'), //form name here // No need if page callback fn() doesn't need it.
+    'access callback' => TRUE,
+  );
+  return $items;
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+
+function arachis_bioproj_theme() {
+  return array(
+    'arachis_bioproj_page_template' => array(  // this array name to be used in theme()
+    'template' => 'arachis_bioproj_page',  //,  template file lis_citations_page.tpl.php
+    //'variables' => array(),
+    ),  //array page_template
+  );  // array return
+}    
+
+/**
+ * Implements page callback.
+ */
+
+function arachis_bioproj_page_callback() {
+    $project_data_type = "All";
+    $method = "All";
+    return theme ('arachis_bioproj_page_template', array('method'=>$method, 'project_data_type'=>$project_data_type, ));
+}
