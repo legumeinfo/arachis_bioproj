@@ -1,6 +1,6 @@
 <!-- Title and guide text  -->
 <div>
-  <h1>Recent <i>Arachis</i> Bioprojects from NCBI</h1>
+  <h1><i>Arachis</i> BioProjects from NCBI</h1>
 </div>
 
 
@@ -32,12 +32,12 @@
     
   <!-- <p style="font-size:70%"></p> -->
 
-For other legume species visit <a href="http://legumeinfo.org/publications/lis_legume_recent_pubs" target="_blank">Recent Legume Publications</a> at our sister site, LIS.
+For BioProjects in other legumes visit <a href="http://legumeinfo.org/lis_ncbi_bioproj" target="_blank">NCBI BioProjects (legumes)</a> at our sister site, LIS.
 <br/>
 <span style="font-size: 80%;">
 
   (<i>Content created with up-to-date data from NCBI Pubmed database</i>)
-</span> --!>
+</span> 
 </div>
 <hr/>
 

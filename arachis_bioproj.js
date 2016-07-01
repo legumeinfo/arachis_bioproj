@@ -181,7 +181,7 @@ function FillDomElementWithRecentPubsHtml (projectDataType, method, domElementId
             console.log("pubmedUrl: " + pubmedUrl);
             
             message = "<span>" + "Found&nbsp;<b>" + esearchCount + "</b>" + messageAddendum + "&nbsp;bioprojects " 
-                      + "at NCBI Bioproject" 
+                      + "at NCBI" 
                       +"</span>";
             pubmedLink = " <a href=\"" + pubmedUrl + "\"  target=\"_blank\"> (Link to NCBI) </a>";
             //htmlContent += message + "<br/><br/>";            
