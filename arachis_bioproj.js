@@ -42,7 +42,7 @@ function makeHtmlFromEsummaryJson(esummaryJson) {
 	var title = esummaryResult[uid]['project_title'];
 	var id = esummaryResult[uid]['project_id'];
 	var description = esummaryResult[uid]['project_description'];
-        var linkToUid = "<a " + "href=\"http://www.ncbi.nlm.nih.gov/bioproject/" + id + "\" "
+        var linkToUid = "<a " + "href=\"https://www.ncbi.nlm.nih.gov/bioproject/" + id + "\" "
 			     + " target=_blank" + ">" + projectAcc + "</a>";  
         var details = "<a onclick=\"jQuery(this).next('fieldset').toggle();\">&nbsp;&nbsp;Details <b>[&plusmn;]</b></a>"
             + "<fieldset id='details'  style='display:none;background-color: #EFEFEF'>"
@@ -59,7 +59,7 @@ function makeHtmlFromEsummaryJson(esummaryJson) {
         var citation_li = "<li>" + citation + details + "</li><br/>"; // + "\n\n";
 	     
         //Creates like:
-        //Dash S, Campbell JD, Cannon EK, Cleary AM, ......, Farmer AD, Cannon SB. 2016. Legume information system (LegumeInfo.org): a key component of a set of federated data resources for the legume family. Nucleic Acids Res 44(D1):D1181-8. (<a href="http://www.ncbi.nlm.nih.gov/pubmed/26546515"  target="_blank">26546515</a>)
+        //Dash S, Campbell JD, Cannon EK, Cleary AM, ......, Farmer AD, Cannon SB. 2016. Legume information system (LegumeInfo.org): a key component of a set of federated data resources for the legume family. Nucleic Acids Res 44(D1):D1181-8. (<a href="https://www.ncbi.nlm.nih.gov/pubmed/26546515"  target="_blank">26546515</a>)
         //console.log("citation_li: " + citation_li); //debug
         citation_html += citation_li; 
         
@@ -96,7 +96,7 @@ function FillDomElementWithRecentPubsHtml (projectDataType, method, domElementId
     var htmlContent = "";
 
     //Construct Esearch URL
-    var BaseUrlEsearch = "http:" + "//eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?" + "db=bioproject" + "&retmode=json" + "&retmax=10000";
+    var BaseUrlEsearch = "https:" + "//eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?" + "db=bioproject" + "&retmode=json" + "&retmax=10000";
     var searchTerm = "(Arachis[Organism])";
     var termOrganism = "([Arachis])";
     var termMethod = "(" + "\"method " +  method +"\"[Properties])";
@@ -172,12 +172,12 @@ function FillDomElementWithRecentPubsHtml (projectDataType, method, domElementId
         
         //Pass Esearch Idlist to get Esummary
 //CAUTION:   If too many Ids, fails. "XMLHttpRequest cannot load ......    The response had HTTP status code 502. "         
-        var esummaryUrl = "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=bioproject&retmode=json" + "&id="
+        var esummaryUrl = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=bioproject&retmode=json" + "&id="
                            + esearchIdlist.join();
         console.log("esummaryUrl: " + esummaryUrl); //debug
         jQuery.get(esummaryUrl,status, function(esummaryJson){
             
-            var pubmedUrl = "http://www.ncbi.nlm.nih.gov/bioproject/" + esearchIdlist900Max.join();
+            var pubmedUrl = "https://www.ncbi.nlm.nih.gov/bioproject/" + esearchIdlist900Max.join();
             console.log("pubmedUrl: " + pubmedUrl);
             
             message = "<span>" + "Found&nbsp;<b>" + esearchCount + "</b>" + messageAddendum + "&nbsp;bioprojects " 
